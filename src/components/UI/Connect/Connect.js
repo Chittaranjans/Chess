@@ -3,6 +3,7 @@ import { useState, useEffect } from 'react'
 import 'bootstrap/dist/css/bootstrap.min.css'
 import './Connect.scss'
 import { gameModes, userTypes } from "../../../utils/constant";
+import store from "../../../store/store"; 
 
 import {
   connectWallet,
