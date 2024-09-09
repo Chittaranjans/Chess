@@ -1,4 +1,4 @@
-import { useEffect, useState } from "react";
+import { useEffect } from "react";
 import { useNavigate } from "react-router-dom";
 import { Image } from "react-bootstrap";
 import "bootstrap/dist/css/bootstrap.min.css";
@@ -8,26 +8,10 @@ import mode2Img from "../../../assets/img/select_game_friend.png";
 import mode3Img from "../../../assets/img/select_game_computer.png";
 import song from "../../../assets/audio/gameselect.mp3";
 import useSound from "use-sound";
-import { connectWallet } from "../../../utils/interact";
-import truncateEthAddress from 'truncate-eth-address'
-import store from "../../../store/store";
 
 export const GameSelect = () => {
   const [playSong] = useSound(song);
   const navigate = useNavigate();
-
-  const walletAddress = store((state) => state.walletAddress);
-  const setWalletAddress = store((state) => state.setWalletAddress);
-  const isWalletConnected = store((state) => state.isWalletConnected);
-  const setIsWalletConnected = store((state) => state.setIsWalletConnected);
-
-  const handleConnectWallet = async () => {
-    const walletResponse = await connectWallet();
-    
-    // Update the store with wallet address and status
-    setWalletAddress(walletResponse.address);
-    setIsWalletConnected(true);
-  };
 
   const matchPlayAction = () => {
     navigate("/matchPlay");
@@ -46,7 +30,6 @@ export const GameSelect = () => {
 
   return (
     <div className="GameSelect">
-      <button className="account-button" onClick={handleConnectWallet}>{isWalletConnected ? truncateEthAddress(walletAddress): "Connect Wallet"}</button>
       <div className="u-container">
         <div className="u-ribbon">Select game</div>
         <div className="u-content">
