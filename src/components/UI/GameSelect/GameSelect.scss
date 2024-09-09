@@ -7,45 +7,6 @@
 	display: grid;
 	align-items: center;
 
-	.account-button {
-		position: absolute;
-		top: 2vh; 
-		right: 2vw; 
-        width: 12vw;
-        max-width: 150px; 
-        height: 6vh;
-        background-color: rgb(70, 41, 63);
-        border: none;
-        border-radius: 10px;
-        cursor: pointer;
-		color: #fbfae2;
-		font-size: smaller;
-		text-align: center;
-		display: flex;
-		justify-content: center;
-		align-items: center;
-		transition: transform 0.2s ease-in-out;
-
-		
-		&:hover {
-			background-color: rgb(90, 55, 85);
-			transform: scale(1.05);
-		}
-
-		
-		@media (max-width: 768px) {
-			width: 20vw;
-			height: 8vh; 
-			font-size: 12px;
-		}
-
-		@media (max-width: 480px) {
-			width: 30vw; 
-			height: 10vh; 
-			font-size: 10px; 
-		}
-	}
-
 	.u-container {
 		position: relative;
 		width: 70vw;
